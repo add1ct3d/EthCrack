@@ -79,7 +79,7 @@ unsigned short check_balance(char* address) {
 	cJSON *result = cJSON_GetObjectItemCaseSensitive(responseText, "result");
 	
 	if(!cJSON_IsString(result)) {
-		printf("%s[!]%s Connection error. Check if you are running RPC. Unable to connect to %s\n", 
+		printf("\n%s[!]%s Connection error. Check if you are running RPC. Unable to connect to %s\n", 
 			ANSI_COLOR_RED, ANSI_COLOR_RESET, CHECKBALANCE_URL);
 		return FALSE;
 	}

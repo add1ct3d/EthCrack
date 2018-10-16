@@ -13,7 +13,6 @@ void worker() {
 		char hex[40];
 		memset(hex, 0, 40);
 		
-		
 		for(int i = 0; i < 20; i++) {
 			char tmp[2];
 			sprintf(tmp, "%02x", ethaddress[i]);
@@ -23,16 +22,26 @@ void worker() {
 		char address[40];
 		memcpy(address, hex, 40);
 		
+		#ifdef VERBOSE
+			printf("\n%s[*]%s Trying ", ANSI_COLOR_CYAN, ANSI_COLOR_RESET);
+			
+			for(int i = 0; i < 32; i++) {
+				printf("%x", priv[i]);
+			}
+			
+			printf(":0x%s\n", hex);
+		#endif
+		
 		if(check_balance(hex) == TRUE) {
 			printf("\n\n!!!! KEY WITH BALANCE FOUND !!!!\n\n");
 			
-			printf("Private Key: ");
+			printf("\nPrivate Key: ");
 			for(int i = 0; i < 32; i++) {
 				printf("%02x", priv[i]);
 			}
 			printf("\n");
 			
-			printf("Eth address: 0x");
+			printf("\nEth address: 0x");
 			printf("%s\n", hex);
 			
 			exit(0);
