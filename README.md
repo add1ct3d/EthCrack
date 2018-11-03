@@ -1,3 +1,5 @@
+Программа парсит ноду и проверяет баланс у сгенерированного кошелька. Долго и в никуда.... Но как пример работы.
+
 # EthWalletMiner
 
 <img width="200" src="https://inves8r.com/wp-content/uploads/2018/01/Screen-Shot-2018-01-14-at-12.18.21.png"> 
